@@ -1,0 +1,22 @@
+{
+  "name": "adoro",
+  "version": "1.0.0",
+  "description": "adoro is a simple writing/publishing tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nelsonic/adoro.git"
+  },
+  "keywords": [
+    "publishing"
+  ],
+  "author": "nelsonic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelsonic/adoro/issues"
+  },
+  "homepage": "https://github.com/nelsonic/adoro"
+}
