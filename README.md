@@ -6,15 +6,18 @@ A writing tool I knocked up one weekend. [work-in-progress]
 
 ## Basic Features
 
-- [ ] Write posts in Markdown
-- [ ] Produces ***Valid HTML***
-- [ ] Summary View (newest first)
-- [ ] Full View
-
+- [x] Write posts in Markdown
+- [x] Produces ***Valid HTML***
+- [x] Summary View (newest first)
+- [x] Summary View Post Title(s) Clickable
+- [x] Full View
 
 
 ## Desirable Features
 
+- [ ] Error Checking
+  - [ ] No Title in Post
+  - [ ] Title not on the first line of Markdown file
 - [ ] Auto-update (not dynamic on each page load)
 - [ ] Logs (analytics)
 - [ ] Valid RSS
@@ -32,3 +35,5 @@ A writing tool I knocked up one weekend. [work-in-progress]
 - [ ] Comment Moderation
 - [ ] View Stats
 - [ ] Tags/Categories
+
+[![I heart Validator](http://www.w3.org/QA/Tools/I_heart_validator_lg "W3C Validator Donation Program")](http://validator.w3.org/)

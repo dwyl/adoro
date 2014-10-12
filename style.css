@@ -1,0 +1,9 @@
+p {
+  font-size: 1.2em;
+  text-align: justify;
+}
+body{
+  padding: 2em;
+  width: 80%;
+  margin: auto;
+}
