@@ -1,7 +1,7 @@
 adoro
 =====
 
-*Another* blogging tool in Node.js
+A *simpler* publishing tool in Node.js.
 
 ## Basic Features
 
@@ -12,6 +12,8 @@ adoro
 - [x] Full View
 - [ ] Tests (Lab) for basic functionality
 - [ ] Re-write to use Templating Library
+- [ ] **Continue reading** link? or just **...** ?
+- [ ] Article Date in Summary view (above title?)
 
 ## Desirable Features
 
@@ -21,7 +23,7 @@ adoro
 - [ ] Watcher only updates the post that was updated (and summary)
 
 - [ ] Auto-update (not dynamic on each page load)
-- [ ] Logs (analytics)
+- [ ] Logs (analytics) >> Google Analytics (for GitHub Pages)
 - [ ] Valid RSS
 - [ ] Deploy to cheap/free hosting/infrastructure
 - [ ] No Database to Configure (*optional* persistance)
@@ -30,9 +32,10 @@ adoro
 - [ ] No cruft editor
 - [ ] Preview while you write (in-browser editor)
 - [ ] Images sensibly wrapped
-- [ ]
+- [ ] Previous & Next post Links/Buttons
+- [ ] Link Back to Homepage '/'
 
-## Future Features
+## Cool things for others to contribute
 
 - [ ] Multi-user
 - [ ] Commenting
