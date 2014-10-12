@@ -30,6 +30,7 @@ h.getPosts(function(err, posts){
   })
 });
 
+// need to use a Template Lib for this!!
 function titleLink(post) {
   return '<h1><a href="/posts/'+post.slug+'.html">'+post.title+'</a></h1>';
 }

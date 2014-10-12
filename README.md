@@ -1,8 +1,7 @@
 adoro
 =====
 
-A writing tool I knocked up one weekend. [work-in-progress]
-
+*Another* blogging tool in Node.js
 
 ## Basic Features
 
@@ -11,13 +10,16 @@ A writing tool I knocked up one weekend. [work-in-progress]
 - [x] Summary View (newest first)
 - [x] Summary View Post Title(s) Clickable
 - [x] Full View
-
+- [ ] (Lab) Tests for basic functionality
+- [ ] Re-write to use Templating Library
 
 ## Desirable Features
 
 - [ ] Error Checking
   - [ ] No Title in Post
   - [ ] Title not on the first line of Markdown file
+- [ ] Watcher only updates the post that was updated (and summary)
+
 - [ ] Auto-update (not dynamic on each page load)
 - [ ] Logs (analytics)
 - [ ] Valid RSS
@@ -26,7 +28,8 @@ A writing tool I knocked up one weekend. [work-in-progress]
 - [ ] A great default theme
 - [ ] Easy to add your own theme
 - [ ] No cruft editor
-- [ ] Preview while you write
+- [ ] Preview while you write (in-browser editor)
+- [ ] Images sensibly wrapped
 
 ## Future Features
 
