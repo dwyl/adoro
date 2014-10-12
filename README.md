@@ -4,13 +4,19 @@ adoro
 A tittle writing tool I knocked up one weekend. [work-in-progress]
 
 
-## Basic
+## Basic Features
 
+- [ ] Valid HTML
+- [ ] Summary View (newest first)
+- [ ] Full View
+- [ ] Auto-update (not dynamic)
+- [ ] Logs (analytics)
 
 
 
 ## Desirable Features
 
+- [ ] Valid RSS
 - [ ] Deploy to cheap/free hosting/infrastructure
 - [ ] No Database to Configure (*optional* persistance)
 - [ ] A great default theme
