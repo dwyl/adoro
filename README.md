@@ -10,7 +10,7 @@ adoro
 - [x] Summary View (newest first)
 - [x] Summary View Post Title(s) Clickable
 - [x] Full View
-- [ ] (Lab) Tests for basic functionality
+- [ ] Tests (Lab) for basic functionality
 - [ ] Re-write to use Templating Library
 
 ## Desirable Features
@@ -30,6 +30,7 @@ adoro
 - [ ] No cruft editor
 - [ ] Preview while you write (in-browser editor)
 - [ ] Images sensibly wrapped
+- [ ]
 
 ## Future Features
 
