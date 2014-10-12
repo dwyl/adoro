@@ -9,7 +9,7 @@ A tittle writing tool I knocked up one weekend. [work-in-progress]
 - [ ] Valid HTML
 - [ ] Summary View (newest first)
 - [ ] Full View
-- [ ] Auto-update (not dynamic)
+- [ ] Auto-update (not dynamic on each page load)
 - [ ] Logs (analytics)
 
 
