@@ -1,10 +1,11 @@
 {
   "name": "adoro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
-    "test": "lab"
+    "test": "lab",
+    "start": "./node_modules/.bin/nodemon ./lib/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,12 @@
   },
   "homepage": "https://github.com/nelsonic/adoro",
   "dependencies": {
+    "hapi": "^11.0.3",
+    "inert": "^3.2.0",
     "marked": "^0.3.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.0",
+    "nodemon": "^1.7.3"
   }
 }
