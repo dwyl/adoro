@@ -1,7 +1,9 @@
-adoro
-=====
+# *adoro*
 
-A *simpler* publishing tool in Node.js.
+***What if*** there was an ***obviously better*** way
+of ***publishing content*** on the web...?
+
+
 
 ## Basic Features
 
