@@ -23,10 +23,13 @@
   "dependencies": {
     "hapi": "^11.0.3",
     "inert": "^3.2.0",
-    "marked": "^0.3.2"
+    "marked": "^0.3.5"
   },
   "devDependencies": {
     "istanbul": "^0.4.0",
     "nodemon": "^1.7.3"
+  },
+  "engines": {
+    "node": ">= 4.0"
   }
 }
