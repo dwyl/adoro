@@ -12,25 +12,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/adoro.git"
+    "url": "https://github.com/dwyl/adoro.git"
   },
   "keywords": [
-    "publishing"
+    "publishing", "blog", "CMS"
   ],
-  "author": "nelsonic",
-  "license": "ISC",
+  "author": "dwyl",
+  "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/nelsonic/adoro/issues"
+    "url": "https://github.com/dwyl/adoro/issues"
   },
-  "homepage": "https://github.com/nelsonic/adoro",
+  "homepage": "https://github.com/dwyl/adoro",
   "dependencies": {
-    "hapi": "^11.0.3",
+    "hapi": "^11.1.2",
     "inert": "^3.2.0",
     "marked": "^0.3.5"
   },
   "devDependencies": {
     "env2": "^2.0.4",
-    "hapi": "^11.1.2",
     "hoek": "^3.0.4",
     "istanbul": "^0.4.0",
     "jsonwebtoken": "^5.4.1",
