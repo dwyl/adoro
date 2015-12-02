@@ -1,12 +1,9 @@
-test( 'test if title input field takes a value ',
-  function(t){
-   var input =  document.getElementById('title') ;
-  	
-  	 input.value()== 'test';
+describe("simple test, should pass", function(){
+  it('addsTen',function(){
+    expect(editor.addTen(10)).toEqual(20);
+  });
 
-    t.equals(document.getElementById('title').value ,'test','youve passed');
-    t.end();
-
-  
-
- });
+  it('inputval',function(){
+    expect(editor.inputValue()).toEqual("");
+  });
+});
