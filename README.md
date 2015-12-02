@@ -1,10 +1,13 @@
-adoro
-=====
+# *adoro*
 
-A *simpler* publishing tool in Node.js.
+***What if*** there was an ***obviously better*** way
+of ***publishing content*** on the web...?
+
+## *Try it*: https://adorote.herokuapp.com
 
 ## Basic Features
 
++ [ ] Effortless Publishing (*pushing content to GitHub Automatically Deploy to connected Heroku App*)
 - [x] Write posts in Markdown
 - [x] Produces ***Valid HTML***
 - [x] Summary View (newest first)
@@ -44,3 +47,8 @@ A *simpler* publishing tool in Node.js.
 - [ ] Tags/Categories
 
 [![I heart Validator](http://www.w3.org/QA/Tools/I_heart_validator_lg "W3C Validator Donation Program")](http://validator.w3.org/)
+
+
+## (*Disorganized*) List of *Useful Links*
+
++ Connect your GitHub repo to Heroku: https://devcenter.heroku.com/articles/github-integration

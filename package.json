@@ -1,25 +1,46 @@
 {
   "name": "adoro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
-    "test": "lab"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "spec": "node ./node_modules/tape/bin/tape ./test/*.test.js | node_modules/tap-spec/bin/cmd.js",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js",
+    "start": "PORT=8000 node_modules/.bin/nodemon example/github_server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/adoro.git"
+    "url": "https://github.com/dwyl/adoro.git"
   },
   "keywords": [
-    "publishing"
+    "publishing", "blog", "CMS"
   ],
-  "author": "nelsonic",
-  "license": "ISC",
+  "author": "dwyl",
+  "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/nelsonic/adoro/issues"
+    "url": "https://github.com/dwyl/adoro/issues"
   },
-  "homepage": "https://github.com/nelsonic/adoro",
+  "homepage": "https://github.com/dwyl/adoro",
   "dependencies": {
-    "marked": "^0.3.2"
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "env2": "^2.0.4",
+    "hoek": "^3.0.4",
+    "istanbul": "^0.4.0",
+    "jsonwebtoken": "^5.4.1",
+    "nock": "^3.2.0",
+    "nodemon": "^1.8.1",
+    "pre-commit": "^1.1.2",
+    "redis-connection": "^4.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.2.2"
+  },
+  "engines": {
+    "node": ">= 4.0"
   }
 }
