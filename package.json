@@ -4,13 +4,10 @@
   "description": "A simple web server",
   "main": "lib/start.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "./node_modules/lab/bin/lab ./test/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
-    "start": "node lib/start.js"
-=======
+    "start": "node lib/start.js",
     "test": "lab",
     "tapetest": "tape tests/*.js"
->>>>>>> 57885b659a531dd08397fd8309ae01c3e7761ccd
   },
   "repository": {
     "type": "git",
@@ -27,7 +24,6 @@
   },
   "homepage": "https://github.com/SimonLab/simpleServer#readme",
   "dependencies": {
-<<<<<<< HEAD
     "handlebars": "^4.0.5",
     "hapi": "^11.1.0",
     "hoek": "^3.0.1",
@@ -37,17 +33,13 @@
   },
   "devDependencies": {
     "code": "^2.0.1",
-    "lab": "^7.2.0"
-=======
+    "lab": "^7.2.0",
     "assert": "^1.3.0",
     "htmlparser2": "^3.8.3",
     "image-size": "^0.4.0",
     "marked": "^0.3.2",
-    "remarkable": "^1.6.1"
-  },
-  "devDependencies": {
+    "remarkable": "^1.6.1",
     "amp-validator": "^0.1.3",
     "tape": "^4.2.2"
->>>>>>> 57885b659a531dd08397fd8309ae01c3e7761ccd
   }
 }
