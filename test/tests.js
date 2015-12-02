@@ -1,5 +1,7 @@
 var h = require('../lib/helpers.js');
+var build = require('../build.js');
 var fs = require('fs');
+var path = require('path');
 
 var exampleMD = require('../exampleData');
 var test = require('tape');
@@ -23,9 +25,51 @@ var intro = h.getIntro(exampleMD);
   t.end();
 });
 
-test  ('h.getIntro', function (t){
-fs.readFile
-
-  t.ok(htmlString);
-  t.end();
+test  ('check if index.html is present', function (t){
+  var html = false;
+  fs.readFile(path.resolve('./index.html'), function(err){
+    if(err) {
+      console.log(err);
+    }
+    else {
+      html = true;
+    }
+  });
+  setTimeout(function() {
+    t.equal(html, true);
+    t.end();
+  }, 100);
 });
+
+test  ('testing if build.js creates an html version of md file',
+  function (t){
+    testPost = false;
+    fs.writeFile('./posts/testPost.md', '#Example title\nblablabla', function(err){
+        if(err) {
+          console.log(err);
+        }
+        else {console.log('file saved');}
+    });
+    setTimeout(function(){
+      build.writeFiles(function(){
+        console.log('build done');
+      });
+    }, 100);
+    setTimeout(function(){
+      fs.readFile(path.resolve('./posts/example-title.html'), function(err){
+        if(err) {
+          console.log(err);
+        }
+        else {
+          console.log('I\'m hereeeeee');
+          testPost = true;
+        }
+      });
+    }, 200);
+    setTimeout(function() {
+      t.equal(testPost, true);
+      t.end();
+    }, 300);
+
+
+  });
