@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/nelsonic/adoro",
   "dependencies": {
-    "marked": "^0.3.2"
+    "marked": "^0.3.2",
+    "remarkable": "^1.6.1"
   },
   "devDependencies": {
     "tape": "^4.2.2",
