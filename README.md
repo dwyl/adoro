@@ -1,46 +1,13 @@
-adoro
-=====
+# simpleServer
+[![devDependency Status](https://david-dm.org/SimonLab/simpleServer/dev-status.svg)](https://david-dm.org/SimonLab/simpleServer#info=devDependencies)
+## What?
 
-A *simpler* publishing tool in Node.js.
+A simple web server.
 
-## Basic Features
+## Why
 
-- [x] Write posts in Markdown
-- [x] Produces ***Valid HTML***
-- [x] Summary View (newest first)
-- [x] Summary View Post Title(s) Clickable
-- [x] Full View
-- [ ] Tests (Lab) for basic functionality
-- [ ] Re-write to use Templating Library
-- [ ] **Continue reading** link? or just **...** ?
-- [ ] Article Date in Summary view (above title?)
+The server can receive some data on the /data endpoint and print them on the console. It allow me to test other services which send data to this endpoint
 
-## Desirable Features
+## How?
 
-- [ ] Error Checking
-  - [ ] No Title in Post
-  - [ ] Title not on the first line of Markdown file
-- [ ] Watcher only updates the post that was updated (and summary)
-
-- [ ] Auto-update (not dynamic on each page load)
-- [ ] Logs (analytics) >> Google Analytics (for GitHub Pages)
-- [ ] Valid RSS
-- [ ] Deploy to cheap/free hosting/infrastructure
-- [ ] No Database to Configure (*optional* persistance)
-- [ ] A great default theme
-- [ ] Easy to add your own theme
-- [ ] No cruft editor
-- [ ] Preview while you write (in-browser editor)
-- [ ] Images sensibly wrapped
-- [ ] Previous & Next post Links/Buttons
-- [ ] Link Back to Homepage '/'
-
-## Cool things for others to contribute
-
-- [ ] Multi-user
-- [ ] Commenting
-- [ ] Comment Moderation
-- [ ] View Stats
-- [ ] Tags/Categories
-
-[![I heart Validator](http://www.w3.org/QA/Tools/I_heart_validator_lg "W3C Validator Donation Program")](http://validator.w3.org/)
+The server is using Hapi and is hosted on Heroku.
