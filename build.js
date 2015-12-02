@@ -20,14 +20,12 @@ build.writeFiles = function(callback) {
               var full = header + md.render(post.full) + footer;
               //console.log('full------------>>>>>>>>>>>>>',full,'<<<<<<<<<<<<<<<<<<<<<');
               fs.writeFile(__dirname + '/posts/' + post.slug + '.html', full, function(err) {
-                console.log('done');
               });
               html = html + titleLink(post) + md.render(post.intro);
               if (--countdown === 0) {
                 html = html + footer;
                 // summary view:
                 fs.writeFile(__dirname + '/index.html', html, function(err) {
-                  console.log('done');
 
                 });
               }
