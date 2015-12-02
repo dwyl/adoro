@@ -17,8 +17,8 @@ h.getPosts(function(err, posts){
 
     // post.full = post content. Puts the data from the post in between the two parts of index.html
     var full = header + marked(post.full) + footer;
-
     // write the post's contents into a new .html file.
+    //console.log('full------------>>>>>>>>>>>>>',full,'<<<<<<<<<<<<<<<<<<<<<');
     fs.writeFile(__dirname+'/posts/'+post.slug +'.html', full, function(err){
       // console.log(__dirname+'/posts/'+post.slug +'.html');
       // console.log('done converting .md post in the .html');
@@ -36,7 +36,7 @@ h.getPosts(function(err, posts){
         console.log('done');
       });
     }
-  })
+  });
 });
 
 // need to use a Template Lib for this!!

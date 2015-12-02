@@ -4,7 +4,7 @@
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
-    "test": "lab"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,9 @@
   "homepage": "https://github.com/nelsonic/adoro",
   "dependencies": {
     "marked": "^0.3.2"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2",
+    "text": "requirejs/text"
   }
 }
