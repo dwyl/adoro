@@ -1,4 +1,6 @@
 var h = require('../lib/helpers.js');
+var fs = require('fs');
+
 var exampleMD = require('../exampleData');
 var test = require('tape');
 
@@ -22,9 +24,8 @@ var intro = h.getIntro(exampleMD);
 });
 
 test  ('h.getIntro', function (t){
+fs.readFile
 
-var html = require('../index.html');
-htmlString = JSON.stringify(html);
   t.ok(htmlString);
   t.end();
 });
