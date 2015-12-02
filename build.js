@@ -34,7 +34,6 @@ build.writeFiles = function(callback) {
                 // summary view:
                 // add in the html file into index.html
                 fs.writeFile(__dirname + '/index.html', html, function(err) {
-                  console.log('done');
 
                 });
               }
