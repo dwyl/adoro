@@ -1,33 +1,44 @@
 {
-  "name": "adoro",
+  "name": "simpleserver",
   "version": "1.0.0",
-  "description": "adoro is a simple writing/publishing tool",
-  "main": "lib/helpers.js",
+  "description": "A simple web server",
+  "main": "lib/start.js",
   "scripts": {
+    "test": "./node_modules/lab/bin/lab ./test/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
+    "start": "node lib/start.js",
     "test": "lab",
     "tapetest": "tape tests/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/adoro.git"
+    "url": "git+https://github.com/SimonLab/simpleServer.git"
   },
   "keywords": [
-    "publishing"
+    "web",
+    "server"
   ],
-  "author": "nelsonic",
+  "author": "SimonLab",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nelsonic/adoro/issues"
+    "url": "https://github.com/SimonLab/simpleServer/issues"
   },
-  "homepage": "https://github.com/nelsonic/adoro",
+  "homepage": "https://github.com/SimonLab/simpleServer#readme",
   "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^11.1.0",
+    "hoek": "^3.0.1",
+    "inert": "^3.2.0",
+    "keyword-highlighter": "^1.0.3",
+    "vision": "^4.0.1"
+  },
+  "devDependencies": {
+    "code": "^2.0.1",
+    "lab": "^7.2.0",
     "assert": "^1.3.0",
     "htmlparser2": "^3.8.3",
     "image-size": "^0.4.0",
     "marked": "^0.3.2",
-    "remarkable": "^1.6.1"
-  },
-  "devDependencies": {
+    "remarkable": "^1.6.1",
     "amp-validator": "^0.1.3",
     "tape": "^4.2.2"
   }
