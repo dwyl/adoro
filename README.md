@@ -1,10 +1,13 @@
-adoro
-=====
+# *adoro*
 
-A *simpler* publishing tool in Node.js.
+***What if*** there was an ***obviously better*** way
+of ***publishing content*** on the web...?
+
+## *Try it*: https://adorote.herokuapp.com
 
 ## Basic Features
 
++ [ ] Effortless Publishing (*pushing content to GitHub Automatically Deploy to connected Heroku App*)
 - [x] Write posts in Markdown
 - [x] Produces ***Valid HTML***
 - [x] Summary View (newest first)
@@ -56,5 +59,6 @@ A *simpler* publishing tool in Node.js.
 3. Run ```node build.js``` in the command line
 
 4. Push your changes up to the gh-pages branch on your Github repo
-git 
+git
+
 5. Your updated blog will now be published
