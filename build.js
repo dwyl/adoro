@@ -3,6 +3,7 @@ var fs = require('fs');
 var util = require('util');
 var marked = require('marked'); // parse markdown into html
 var getPosts = require('./lib/helpers.js').getPosts;
+var buildAmpPost = require('./lib/handlebars.js').buildPost;
 
 // include header.html file if one exists
 var header = fs.readFileSync(__dirname + '/header.html', 'utf8');
@@ -13,11 +14,16 @@ var html = header;
 getPosts(function(err, posts){
   // console.log(util.inspect(posts));
   var countdown = posts.length;
-  posts.map(function(post){
-    var full = post.html;
-    // var full = buildAmpPost(post);
+  posts.forEach(function(post){
+    // var full = post.html;
+    // console.log('POST >>>>>', post.html, typeof post.html);
+    var full = buildAmpPost(post.html);
     // var full = header + marked(post.full) + footer;
-    fs.writeFile(__dirname+'/posts/'+post.slug +'.html', full, function(err){
+    var dest = __dirname+'/posts/tests/'+post.slug +'.html'
+    // console.log('slug!!!: ', post.slug)
+    // console.log('full!!!: ', full)
+    // console.log('dest!!!: ', dest)
+    fs.writeFile(dest, full, function(err){
       console.log('done');
     });
     // html = html + titleLink(post) + marked(post.intro);
