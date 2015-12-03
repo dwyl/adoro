@@ -1,9 +1,9 @@
 var test         = require('tape');
 var mdAmp        = require('../lib/markdown-amp.js');
 var fs           = require('fs');
-var mdFileString = fs.readFileSync(__dirname + '/../posts/postlink.md').toString();
-var mdFileStringImage = fs.readFileSync(__dirname + '/../posts/postImage.md').toString();
-var mdFileStringImage2 = fs.readFileSync(__dirname + '/../posts/example.md').toString();
+var mdFileString = fs.readFileSync(__dirname + '/postlink.md').toString();
+var mdFileStringImage = fs.readFileSync(__dirname + '/postImage.md').toString();
+var mdFileStringImage2 = fs.readFileSync(__dirname + '/example.md').toString();
 
 test("testing heading parsed correctly", function(t) {
   var result = [];
