@@ -5,6 +5,8 @@ var fs = require('fs');
 var util = require('util');
 var getPosts = require('./lib/helpers.js').getPosts;
 var buildAmpPost = require('./lib/handlebars.js').buildPost;
+var buildAmpIndex = require('./lib/handlebars.js').buildIndex;
+
 
 // include header.html file if one exists
 var header = fs.readFileSync(__dirname + '/header.html', 'utf8');
@@ -12,46 +14,39 @@ var header = fs.readFileSync(__dirname + '/header.html', 'utf8');
 var footer = fs.readFileSync(__dirname + '/footer.html', 'utf8');
 var html = header;
 
-getPosts(function(err, posts){
+getPosts(function(err, posts) {
+  var postUrls = posts.map(function(post) {
+    return './' + post.slug + '.html';
+  });
+  console.log(postUrls);
   // console.log(util.inspect(posts));
   var countdown = posts.length;
-  posts.forEach(function(post){
-    // var full = post.html;
-    // console.log('POST >>>>>', post.html, typeof post.html);
-    var full = buildAmpPost(post.html);
-    var path = __dirname + '/.site';
-    var destination = path + '/' + post.slug +'.html';
 
-    rimraf(path, function(err) {
-      if(err) throw err;
-      mkdirp(path, function(err) {
+  var path = __dirname + '/.site';
+
+  rimraf(path, function(err) {
+    if (err) throw err;
+    mkdirp(path, function(err) {
+      if (err) throw err;
+      fs.writeFile(path + '/index.html', buildAmpIndex(postUrls), function(err) {
         if (err) throw err;
-        fs.writeFile(destination, full, function(err){
-          if (err) throw err;
-          console.log('done');
+        posts.forEach(function(post) {
+          var full = buildAmpPost(post.html);
+          var destination = path + '/' + post.slug + '.html';
+
+          fs.writeFile(destination, full, function(err) {
+            if (err) throw err;
+            console.log('done');
+          });
         });
       });
     });
-
-
-
-    // fs.mkdir(path, function())
-
-    // html = html + titleLink(post) + marked(post.intro);
-    // if(--countdown === 0){
-    //   html = html + footer;
-    //   // summary view:
-    //   fs.writeFile(__dirname+'/index.html', html, function(err){
-    //     console.log('done');
-    //   });
-    //
-    // }
   });
 });
 
 // need to use a Template Lib for this!!
 function titleLink(post) {
-  return '<h1><a href="/posts/'+post.slug+'.html">'+post.title+'</a></h1>';
+  return '<h1><a href="/posts/' + post.slug + '.html">' + post.title + '</a></h1>';
 }
 
 // output everything into index.html
