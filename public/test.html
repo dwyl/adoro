@@ -29,8 +29,6 @@
         assert.ok(submit, "button exists");
     });
 
-
-
     test('do the input boxes take values', function(assert) {
         titleBoxVal = target.getElementById('title').value;
         textBoxVal = target.getElementById('textBox').value;
@@ -41,14 +39,13 @@
 
     });
 
-
     test('On click does submitFunction return string', function(assert) {
       var submitFunc = target.getElementById('submit').click();
       console.log(target.getElementById('submit'));
       assert.equal( submitFunc,
         "Joe Bloggs Goes for a swim http://www.fcwholesale.com/images/ADJB-TP032-BLUE.jpg ");
-     
-    }); 
+
+    });
 
 
     </script>
