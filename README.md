@@ -44,3 +44,17 @@ A *simpler* publishing tool in Node.js.
 - [ ] Tags/Categories
 
 [![I heart Validator](http://www.w3.org/QA/Tools/I_heart_validator_lg "W3C Validator Donation Program")](http://validator.w3.org/)
+
+## How to use
+
+1. Clone the repo
+
+    > ```git clone https://github.com/dwyl/adoro.git```
+
+2. Create a markdown file for your content inside the posts folder e.g. post.md
+
+3. Run ```node build.js``` in the command line
+
+4. Push your changes up to the gh-pages branch on your Github repo
+git 
+5. Your updated blog will now be published

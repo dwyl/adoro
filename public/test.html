@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iframe tests</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
+  </head>
+  <body>
+    <iframe src = "editor.html" width = "100%" height = "500px" id = "iframe" frameborder = "0"></iframe>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      var iframe = document.getElementById('iframe');
+      var target = iframe.contentWindow.document || iframe.contentDocument;
+      var inputDiv, inputBox, sendButton, f;
+
+      test('input elements exist', function(assert) {
+        inputBox = target.getElementById('title');
+        assert.ok(inputBox, "inputBox exists");
+      });
+
+      test('input elements exist', function(assert) {
+        inputBox = target.getElementById('title');
+        assert.ok(inputBox, "inputBox exists");
+      });
+    </script>
+  </body>
+
+</html>
