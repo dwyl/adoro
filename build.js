@@ -19,8 +19,13 @@ build.writeFiles = function(callback) {
           posts.map(function(post) {
             // post.full = post content. Puts the data from the post in between the two parts of index.html
               var full = header + md.render(post.full) + footer;
-              //console.log('full------------>>>>>>>>>>>>>',full,'<<<<<<<<<<<<<<<<<<<<<');
+              // console.log('full------------>>>>>>>>>>>>>',full,'<<<<<<<<<<<<<<<<<<<<<');
               // write the post's contents into a new .html file.
+              // var regexForImgFormat = /<img[^>]+src="([">$])/g;
+              // console.log(full.match(regexForImgFormat));
+              // console.log('FULL' + full);
+              // full = full.replace(full.match(regexForImgFormat), '\n' + full.match(regexForImgFormat) + '\n');
+              // console.log('NEW FULL' + full);
               fs.writeFile(__dirname + '/posts/' + post.slug + '.html', full, function(err) {
                 // console.log(__dirname+'/posts/'+post.slug +'.html');
                 // console.log('done converting .md post in the .html');
@@ -47,6 +52,6 @@ build.writeFiles = function(callback) {
             // output each post into its respective post-name.html
           });
         });
-      };
+      }();
 
           module.exports = build;
