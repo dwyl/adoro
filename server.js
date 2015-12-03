@@ -4,6 +4,7 @@ var index = fs.readFileSync(__dirname + '/public/editor.html');
 var editorJs = fs.readFileSync(__dirname + '/public/editor.js');
 
 function handler (req,res){
+  console.log("im in the handler", req.url);
    if (req.url ==="/"){
      res.writeHead(200, {
        "Content-Type": "text/html"
@@ -16,7 +17,9 @@ function handler (req,res){
       });
       res.end(editorJs);
    }
-   else if (req.url ===){
+   else if (req.url==="/favicon.ico"){
+   }
+   else if (req.url.indexOf('/all') > -1){
      console.log("REQ__URL",req.url);
    }
 }
