@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Iframe tests</title>
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
-  </head>
-  <body>
-    <iframe src = "editor.html" width = "100%" height = "500px" id = "iframe" frameborder = "0"></iframe>
+</head>
+
+<body>
+    <iframe src="editor.html" width="100%" height="500px" id="iframe" frameborder="0"></iframe>
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
     <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
-      var iframe = document.getElementById('iframe');
-      var target = iframe.contentWindow.document || iframe.contentDocument;
-      var inputDiv, inputBox, sendButton, f;
+    var iframe = document.getElementById('iframe');
+    var target = iframe.contentWindow.document || iframe.contentDocument;
+    var inputDiv, inputBox, sendButton, f;
 
-      test('input elements exist', function(assert) {
-        inputBox = target.getElementById('title');
-        assert.ok(inputBox, "inputBox exists");
-      });
+    test('input elements exist', function(assert) {
+        titleBox = target.getElementById('title');
+        textBox = target.getElementById('textBox');
+        imgUrl = target.getElementById('imgUrl');
+        submit = target.getElementById('submit');
+        assert.ok(titleBox, "inputBox exists");
+        assert.ok(textBox, "inputBox exists");
+        assert.ok(imgUrl, "inputBox exists");
+        assert.ok(submit, "button exists");
+    });
 
-      test('input elements exist', function(assert) {
-        inputBox = target.getElementById('title');
-        assert.ok(inputBox, "inputBox exists");
-      });
+    test('do the input boxes take values', function(assert) {
+        titleBoxVal = target.getElementById('title').value;
+        textBoxVal = target.getElementById('textBox').value;
+        imgUrlVal = target.getElementById('imgUrl').value;
+        assert.ok(titleBoxVal, "Val title exists");
+        assert.ok(textBoxVal, "Val text exists");
+        assert.ok(imgUrlVal, "Val url exists");
+    });
+
+    test('On click does submitFunction return string', function(assert) {
+      var submitFunc = target.getElementById('submit').click();
+      console.log(target.getElementById('submit'));
+      assert.equal( submitFunc,
+        "Joe Bloggs Goes for a swim http://www.fcwholesale.com/images/ADJB-TP032-BLUE.jpg ");
+
+    });
     </script>
-  </body>
+</body>
 
 </html>
