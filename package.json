@@ -1,26 +1,26 @@
 {
   "name": "adoro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
     "test": "tape test/*.js"
+
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/adoro.git"
+    "url": "https://github.com/dwyl/adoro.git"
   },
   "keywords": [
-    "publishing"
+    "publishing", "blog", "CMS"
   ],
-  "author": "nelsonic",
-  "license": "ISC",
+  "author": "dwyl",
+  "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/nelsonic/adoro/issues"
+    "url": "https://github.com/dwyl/adoro/issues"
   },
-  "homepage": "https://github.com/nelsonic/adoro",
+  "homepage": "https://github.com/dwyl/adoro",
   "dependencies": {
-    "marked": "^0.3.2",
     "remarkable": "^1.6.1"
   },
   "devDependencies": {

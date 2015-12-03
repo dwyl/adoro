@@ -1,22 +1,24 @@
+function addMdHeading(title,hashes){
+	return hashes + title;
+}
+function addMdImgUrl(description, url){
+	 return   '!['+ description+']('+ url+')';
+}
 
+document.getElementById('submit').addEventListener('click',function() {
+	console.log('BOOM');
+	var form = document.getElementById('myForm').value;
+	console.log('FORM',form);
+	var title=  document.getElementById('title').value;
+	var text=  document.getElementById('textBox').value;
+	var imgUrl =  document.getElementById('imgUrl').value;
+	var data =  addMdHeading(title, "###") + '\\n'+ text + '\\n'+ addMdImgUrl('image', imgUrl);
 
-var editor = {};
+	var request = new XMLHttpRequest();
 
-editor.addTen =  function(a){
-return a+10;
-};
-
-// var page = {
-//   element : $('input#titleInput')
-//
-// };
-
-editor.inputValue = function(){
-  var page = {
-    element : $('input#titleInput')
+  request.onreadystatechange = function() {
+    console.log(request.responseText);
   };
-  console.log(page.element);
-  // var input = document.getElementById('title').value;
-  // console.log('inputval',input);
-  return page.element;
-};
+  request.open('POST', "/all" + data ,true);
+  request.send();
+});
