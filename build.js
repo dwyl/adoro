@@ -1,4 +1,6 @@
 // load dependencies
+var rimraf = require('rimraf');
+var mkdirp = require('mkdirp');
 var fs = require('fs');
 var util = require('util');
 var getPosts = require('./lib/helpers.js').getPosts;
@@ -17,14 +19,24 @@ getPosts(function(err, posts){
     // var full = post.html;
     // console.log('POST >>>>>', post.html, typeof post.html);
     var full = buildAmpPost(post.html);
-    // var full = header + marked(post.full) + footer;
-    var dest = __dirname+'/posts/tests/'+post.slug +'.html'
-    // console.log('slug!!!: ', post.slug)
-    // console.log('full!!!: ', full)
-    // console.log('dest!!!: ', dest)
-    fs.writeFile(dest, full, function(err){
-      console.log('done');
+    var path = __dirname + '/.site';
+    var destination = path + '/' + post.slug +'.html';
+
+    rimraf(path, function(err) {
+      if(err) throw err;
+      mkdirp(path, function(err) {
+        if (err) throw err;
+        fs.writeFile(destination, full, function(err){
+          if (err) throw err;
+          console.log('done');
+        });
+      });
     });
+
+
+
+    // fs.mkdir(path, function())
+
     // html = html + titleLink(post) + marked(post.intro);
     // if(--countdown === 0){
     //   html = html + footer;
@@ -34,7 +46,7 @@ getPosts(function(err, posts){
     //   });
     //
     // }
-  })
+  });
 });
 
 // need to use a Template Lib for this!!
