@@ -1,7 +1,6 @@
 // load dependencies
 var fs = require('fs');
 var util = require('util');
-var marked = require('marked'); // parse markdown into html
 var getPosts = require('./lib/helpers.js').getPosts;
 var buildAmpPost = require('./lib/handlebars.js').buildPost;
 
