@@ -4,11 +4,16 @@
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
+<<<<<<< HEAD
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
     "spec": "node ./node_modules/tape/bin/tape ./test/*.test.js | node_modules/tap-spec/bin/cmd.js",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js",
     "start": "PORT=8000 node_modules/.bin/nodemon example/github_server.js"
+=======
+    "test": "lab",
+    "tapetest": "istanbul cover tape tests/*"
+>>>>>>> 299dd1010911bdef893bc4eedc8089b4026af861
   },
   "repository": {
     "type": "git",
@@ -24,6 +29,7 @@
   },
   "homepage": "https://github.com/dwyl/adoro",
   "dependencies": {
+<<<<<<< HEAD
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
     "marked": "^0.3.5"
@@ -42,5 +48,17 @@
   },
   "engines": {
     "node": ">= 4.0"
+=======
+    "assert": "^1.3.0",
+    "htmlparser2": "^3.8.3",
+    "image-size": "^0.4.0",
+    "marked": "^0.3.2",
+    "remarkable": "^1.6.1"
+  },
+  "devDependencies": {
+    "amp-validator": "^0.1.3",
+    "istanbul": "^0.4.1",
+    "tape": "^4.2.2"
+>>>>>>> 299dd1010911bdef893bc4eedc8089b4026af861
   }
 }
