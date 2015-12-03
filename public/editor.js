@@ -1,22 +1,10 @@
 
 
-var editor = {};
-
-editor.addTen =  function(a){
-return a+10;
-};
-
-// var page = {
-//   element : $('input#titleInput')
-//
-// };
-
-editor.inputValue = function(){
-  var page = {
-    element : $('input#titleInput')
-  };
-  console.log(page.element);
-  // var input = document.getElementById('title').value;
-  // console.log('inputval',input);
-  return page.element;
-};
+document.getElementById('submit').addEventListener('click',function() { 
+	console.log('BOOM');
+	var title=  document.getElementById('title').value;
+	var text=  document.getElementById('textBox').value;
+	var imgUrl =  document.getElementById('imgUrl').value;
+	console.log(title , text , imgUrl);
+	return title + text + imgUrl;
+});
