@@ -7,13 +7,6 @@ var getPosts = require('./lib/helpers.js').getPosts;
 var buildAmpPost = require('./lib/handlebars.js').buildPost;
 var buildAmpIndex = require('./lib/handlebars.js').buildIndex;
 
-
-// include header.html file if one exists
-var header = fs.readFileSync(__dirname + '/header.html', 'utf8');
-// include footer.html if it exists
-var footer = fs.readFileSync(__dirname + '/footer.html', 'utf8');
-var html = header;
-
 getPosts(function(err, posts) {
   var postUrls = posts.map(function(post) {
     return './' + post.slug + '.html';
