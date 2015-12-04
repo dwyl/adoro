@@ -14,6 +14,7 @@ build.writeFiles = function(callback) {
     var html = header;
 
     h.getPosts(function(err, posts) {
+      console.log("im in h.getposts");
           // console.log(util.inspect(posts));
           var countdown = posts.length;
           posts.map(function(post) {
@@ -39,6 +40,9 @@ build.writeFiles = function(callback) {
             // output each post into its respective post-name.html
           });
         });
+        console.log("im in writeFiles!!!");
+
       };
+    build.writeFiles();
 
           module.exports = build;
