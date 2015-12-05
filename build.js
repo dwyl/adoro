@@ -23,9 +23,7 @@ build.writeFiles = function(callback) {
         // edit full to make images amp compliant:
         if (full.indexOf('<img') > -1) {
           full = imageToAmpImage(full);
-          // console.log('IS THIS WORKING?! >>>>>>>', full);
-        };
-        // console.log(full);
+        }
         var htmlFileName = __dirname + '/posts/' + post.slug + '.html';
         fs.writeFile(htmlFileName, full, function(err) {
           // console.log('done converting .md post in the .html');
@@ -48,7 +46,7 @@ build.writeFiles = function(callback) {
          var str2 = str;
          str1 = str1.slice(start, cut);
          str2 = str2.slice(cut, end);
-         str = str1 + add + str2
+         str = str1 + add + str2;
          return str;
        }
 
@@ -67,7 +65,7 @@ build.writeFiles = function(callback) {
         });
         // console.log('FULL DATA >>>>>>>>>>>>', fullData); //fullData = string;
         return fullData;
-      };
+      }
 
       // need to use a Template Lib for this!!
       function titleLink(post) {
@@ -78,7 +76,8 @@ build.writeFiles = function(callback) {
       // output each post into its respective post-name.html
     });
   });
-}();
+};
+build.writeFiles();
 
 module.exports = build;
 
