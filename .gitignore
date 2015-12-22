@@ -1,3 +1,6 @@
 node_modules
 .DS_Store
 *.env
+coverage
+posts/*.html
+npm-debug.log

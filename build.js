@@ -1,38 +1,47 @@
 // load dependencies
+var rimraf = require('rimraf');
+var mkdirp = require('mkdirp');
 var fs = require('fs');
 var util = require('util');
-var marked = require('marked'); // parse markdown into html
-var h = require('./lib/helpers.js');
+var getPosts = require('./lib/helpers.js').getPosts;
+var buildAmpPost = require('./lib/handlebars.js').buildPost;
+var buildAmpIndex = require('./lib/handlebars.js').buildIndex;
 
-// include header.html file if one exists
-var header = fs.readFileSync(__dirname + '/header.html', 'utf8');
-// include footer.html if it exists
-var footer = fs.readFileSync(__dirname + '/footer.html', 'utf8');
-var html = header;
+var style = fs.readFileSync(__dirname + '/styles/markdownstyle.css');
 
-h.getPosts(function(err, posts){
+getPosts(function(err, posts) {
+  var postUrls = posts.map(function(post) {
+    return './' + post.slug + '.html';
+  });
+  console.log(postUrls);
   // console.log(util.inspect(posts));
   var countdown = posts.length;
-  posts.map(function(post){
-    var full = header + marked(post.full) + footer;
-    fs.writeFile(__dirname+'/posts/'+post.slug +'.html', full, function(err){
-      console.log('done');
-    });
-    html = html + titleLink(post) + marked(post.intro);
-    if(--countdown === 0){
-      html = html + footer;
-      // summary view:
-      fs.writeFile(__dirname+'/index.html', html, function(err){
-        console.log('done');
-      });
 
-    }
-  })
+  var path = __dirname + '/.site';
+
+  rimraf(path, function(err) {
+    if (err) throw err;
+    mkdirp(path, function(err) {
+      if (err) throw err;
+      fs.writeFile(path + '/index.html', buildAmpIndex(postUrls, style), function(err) {
+        if (err) throw err;
+        posts.forEach(function(post) {
+          var full = buildAmpPost(post.html, style);
+          var destination = path + '/' + post.slug + '.html';
+
+          fs.writeFile(destination, full, function(err) {
+            if (err) throw err;
+            console.log('done');
+          });
+        });
+      });
+    });
+  });
 });
 
 // need to use a Template Lib for this!!
 function titleLink(post) {
-  return '<h1><a href="/posts/'+post.slug+'.html">'+post.title+'</a></h1>';
+  return '<h1><a href="/posts/' + post.slug + '.html">' + post.title + '</a></h1>';
 }
 
 // output everything into index.html
