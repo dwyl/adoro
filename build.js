@@ -13,7 +13,7 @@ getPosts(function(err, posts) {
   var postUrls = posts.map(function(post) {
     return './' + post.slug + '.html';
   });
-  console.log(postUrls);
+  // console.log(postUrls);
   // console.log(util.inspect(posts));
   var countdown = posts.length;
 
