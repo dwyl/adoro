@@ -16,9 +16,7 @@ test("testing heading parsed correctly", function(t) {
 });
 
 test("testing image parsing", function(t) {
-  var actual = mdAmp('![test image](https://www.newton.ac.uk/files/covers/968361.jpg)', function(html) {
-    console.log("********", html);
-    var expected = '<amp-img src = "http://www.newton.ac.uk/files/covers/968361.jpg">\n';
+    mdAmp('![test image](https://www.newton.ac.uk/files/covers/968361.jpg)', function(html) {
     t.ok(html.indexOf("https://www.newton.ac.uk/files/covers/968361.jpg") > -1, 'SUCCESS!');
     t.end();
   });
