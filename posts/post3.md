@@ -1,4 +1,4 @@
-# Post 3 Title is So Awesome
+# Title is So Awesome
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
 ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit

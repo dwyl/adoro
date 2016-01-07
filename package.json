@@ -4,15 +4,21 @@
   "description": "adoro is a simple writing/publishing tool",
   "main": "lib/helpers.js",
   "scripts": {
-    "test": "tape test/*.js"
-
+    "test2": "tape test/*.js",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "spec": "node ./node_modules/tape/bin/tape ./test/*.test.js | node_modules/tap-spec/bin/cmd.js",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./tests/*.test.js",
+    "start": "PORT=8000 node_modules/.bin/nodemon example/github_server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dwyl/adoro.git"
   },
   "keywords": [
-    "publishing", "blog", "CMS"
+    "publishing",
+    "blog",
+    "CMS"
   ],
   "author": "dwyl",
   "license": "GPL-2.0",
@@ -21,10 +27,30 @@
   },
   "homepage": "https://github.com/dwyl/adoro",
   "dependencies": {
-    "remarkable": "^1.6.1"
+    "remarkable": "^1.6.1",
+    "env2": "^2.0.4",
+    "hoek": "^3.0.4",
+    "htmlparser2": "^3.9.0",
+    "image-size": "^0.4.0",
+    "remarkable": "^1.6.1",
+    "mkdirp": "^0.5.1",
+    "inert": "^3.2.0",
+    "hapi": "^11.1.2",
+    "handlebars": "^4.0.5",
+    "text": "requirejs/text",
+    "rimraf": "^2.4.4",
+    "jsonwebtoken": "^5.4.1",
+    "redis-connection": "^4.0.0"
   },
   "devDependencies": {
     "tape": "^4.2.2",
-    "text": "requirejs/text"
+    "istanbul": "^0.4.0",
+    "nock": "^3.2.0",
+    "nodemon": "^1.8.1",
+    "pre-commit": "^1.1.2",
+    "tap-spec": "^4.1.1"
+  },
+  "engines": {
+    "node": ">= 4.0"
   }
 }
